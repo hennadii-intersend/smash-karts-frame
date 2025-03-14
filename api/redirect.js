@@ -1,6 +1,7 @@
 // Redirect API handler for Farcaster Frame
 module.exports = async (req, res) => {
-  // Set cache control headers
+  // Set response headers
+  res.setHeader('Content-Type', 'application/json');
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Pragma', 'no-cache');
   res.setHeader('Expires', '0');
@@ -23,11 +24,10 @@ module.exports = async (req, res) => {
     // Log the frame request for debugging
     console.log('Frame request received');
 
-    // Return a redirect in Farcaster frame format v1
+    // Return a redirect in exact format from docs
+    // Strip to bare minimum
     return res.status(200).json({
-      version: 1,
-      redirect: "https://www.crazygames.com/embed/smash-karts",
-      untrustedData: {}
+      "redirect": "https://www.crazygames.com/embed/smash-karts"
     });
   } catch (error) {
     console.error('Error in frame handler:', error);
