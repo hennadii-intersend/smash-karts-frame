@@ -25,7 +25,15 @@ module.exports = async (req, res) => {
 
     // Return a redirect in Farcaster v2 format
     return res.status(200).json({
-      redirect: 'https://www.crazygames.com/embed/smash-karts'
+      frameVersion: "vNext",
+      image: "https://imgs.crazygames.com/smash-karts_16x9/20250304104934/smash-karts_16x9-cover?metadata=none&quality=70&width=889",
+      buttons: [
+        {
+          label: "Play Smash Karts",
+          action: "link",
+          target: "https://www.crazygames.com/embed/smash-karts"
+        }
+      ]
     });
   } catch (error) {
     console.error('Error in frame handler:', error);
