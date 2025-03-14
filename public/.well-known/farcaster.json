@@ -1,5 +1,11 @@
 {
+  "accountAssociation": {
+    "message": "Please sign this message to validate your Farcaster account for smash-karts-frame.vercel.app"
+  },
   "frame": {
+    "version": "1",
+    "name": "Smash Karts Game",
+    "iconUrl": "https://imgs.crazygames.com/smash-karts_16x9/20250304104934/smash-karts_16x9-cover?metadata=none&quality=70&width=100",
     "homeUrl": "https://smash-karts-frame.vercel.app",
     "supportedTriggers": ["cast"],
     "permissions": ["link", "post_redirect"]
