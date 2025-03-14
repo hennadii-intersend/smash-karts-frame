@@ -1,13 +1,16 @@
 {
   "accountAssociation": {
-    "message": "Please sign this message to validate your Farcaster account for smash-karts-frame.vercel.app"
+    "header": "eyJmaWQiOjQ5NDM2MywidHlwZSI6ImN1c3RvZHkiLCJrZXkiOiIweDIwNzEzZjBGQjZGQjk0N0JCMDg2MGE4MzYxM2QxMzdEOWQwYWEwNTIifQ",
+    "payload": "eyJkb21haW4iOiJzbWFzaC1rYXJ0cy1mcmFtZS52ZXJjZWwuYXBwIn0",
+    "signature": "MHg2OGU0NGViOWFiNDE0OGFmN2I2NjZiNjk1YjY5NGRiNjAxMjU5MDU2YWExNTM3NGYwOTdlODcxNGJjNWIxMmViNGVlYjc5YzI2N2NkZDRmYmFlNjY2N2I5YWViNzgxZGFhOTMzMzI0MjE3MjYwZjMzYWM5NWJhZTk2MWIwNmU5ZTFj"
   },
   "frame": {
     "version": "1",
-    "name": "Smash Karts Game",
+    "name": "Smash Karts",
     "iconUrl": "https://imgs.crazygames.com/smash-karts_16x9/20250304104934/smash-karts_16x9-cover?metadata=none&quality=70&width=100",
     "homeUrl": "https://smash-karts-frame.vercel.app",
-    "supportedTriggers": ["cast"],
+    "imageUrl": "https://imgs.crazygames.com/smash-karts_16x9/20250304104934/smash-karts_16x9-cover?metadata=none&quality=70&width=889",
+    "buttonTitle": "Play Smash Karts",
     "permissions": ["link", "post_redirect"]
   }
 }
