@@ -24,10 +24,21 @@ module.exports = async (req, res) => {
     // Log the frame request for debugging
     console.log('Frame request received');
 
-    // Return a redirect in exact format from docs
-    // Strip to bare minimum
+    // Return an HTML page with embedded iframe instead of redirect
     return res.status(200).json({
-      "redirect": "https://www.crazygames.com/embed/smash-karts"
+      "html": `<!DOCTYPE html>
+      <html>
+        <head>
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+          <style>
+            body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+            iframe { width: 100%; height: 100%; border: none; }
+          </style>
+        </head>
+        <body>
+          <iframe src="https://www.crazygames.com/embed/smash-karts" allowfullscreen="true"></iframe>
+        </body>
+      </html>`
     });
   } catch (error) {
     console.error('Error in frame handler:', error);
