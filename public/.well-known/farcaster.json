@@ -1,7 +1,7 @@
 {
   "frame": {
-    "homeUrl": "https://your-domain.com",
+    "homeUrl": "https://smash-karts-frame.vercel.app",
     "supportedTriggers": ["cast"],
-    "permissions": ["link"]
+    "permissions": ["link", "post_redirect"]
   }
 }
