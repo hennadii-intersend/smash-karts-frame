@@ -1,0 +1,7 @@
+{
+  "frame": {
+    "homeUrl": "https://your-domain.com",
+    "supportedTriggers": ["cast"],
+    "permissions": ["link"]
+  }
+}
