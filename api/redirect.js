@@ -1,9 +1,18 @@
 // Redirect API handler for Farcaster Frame
-export default function handler(req, res) {
+module.exports = async (req, res) => {
   // Set cache control headers
   res.setHeader('Cache-Control', 'no-cache, no-store, must-revalidate');
   res.setHeader('Pragma', 'no-cache');
   res.setHeader('Expires', '0');
+  // Set CORS headers
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+
+  // Handle OPTIONS requests for CORS preflight
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
 
   // Only accept POST requests
   if (req.method !== 'POST') {
@@ -11,18 +20,12 @@ export default function handler(req, res) {
   }
 
   try {
-    // Log the frame request for debugging (optional)
-    console.log('Frame request received:', req.body);
+    // Log the frame request for debugging
+    console.log('Frame request received');
 
-    // Return an interactive frame response that will open the game
-    // This is compatible with both web and iOS clients
+    // Return a redirect in Farcaster v2 format
     return res.status(200).json({
-      image: "https://imgs.crazygames.com/smash-karts_16x9/20250304104934/smash-karts_16x9-cover?metadata=none&quality=70&width=889",
-      buttons: [{
-        label: "Play Smash Karts",
-        action: "link", // Use link action which is more widely supported
-        target: "https://www.crazygames.com/embed/smash-karts"
-      }]
+      redirect: 'https://www.crazygames.com/embed/smash-karts'
     });
   } catch (error) {
     console.error('Error in frame handler:', error);
